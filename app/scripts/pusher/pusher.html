@@ -1,0 +1,24 @@
+<div class="pusher__list" ng-repeat="record in vm.records">
+    <article class="figure">
+      <header>
+        <div class='avatar'> 
+          <div class='img'>
+            <img src="{{record.profile_image_url}}" alt="User Picture" ng-if="!!record.profile_image_url">
+          </div>
+        </div>
+        <hgroup>
+          <h1 class='color-mod'>{{ record.name }}</h1>
+          <h2>{{ record.screen_name }}</h2>
+        </hgroup>
+      </header>
+      
+      <section ng-bind-html='record.post' ng-if="!!record.post"></section>
+      
+      <footer class="pusher__list__footer">
+        <div class="pusher__list__post__meta">
+          <span class="pusher__list__post__meta__time">{{ record.created_at | date:"MM/dd/yyyy 'at' h:mma"}}</span>  
+        </div><!-- end .post -->
+      </footer>
+      
+    </article>
+</div>
