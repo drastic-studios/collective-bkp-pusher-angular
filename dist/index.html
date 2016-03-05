@@ -17,7 +17,7 @@
     var pusher = new Pusher('1f4112082637b5a39e20');
     var channel = pusher.subscribe('twitter_streaming_channel');
     channel.bind('hashtag_cbpk_posted', function(data) {
-      //console.log(data);
+      console.log(data);
       document.getElementById("drastic-terminator")
         .sendToActionScript(data.tweet.screen_name);
 
