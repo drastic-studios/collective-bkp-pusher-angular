@@ -26,7 +26,8 @@
       
       var str = data.tweet.profile_image_url;
       document.getElementById("drastic-terminator")
-        .sendImageToActionScript(str.substring(0, str.lastIndexOf('_'))+'.png');
+        // .sendImageToActionScript(str.substring(0, str.lastIndexOf('_'))+'.png');
+        .sendImageToActionScript(str.substring(0, str.lastIndexOf('_')) + '.' + str.replace(/^.*\./, ''))
     });
 
     function pingServer(url) {
